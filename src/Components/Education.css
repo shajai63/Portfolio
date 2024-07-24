@@ -1,0 +1,55 @@
+.education{
+    height: 90vh;
+}
+#head{
+    margin-bottom: 50px;
+    margin-left: 125px;
+}
+.box{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+    border: none;
+    margin-top: 30px;
+    margin-left: 250px;
+    margin-right: 250px;
+    padding: 5px;
+    box-shadow:  0 4px 8px 0 rgb(255, 255, 255), 0 6px 20px 0 rgba(251, 251, 251, 0.19)
+}
+.left{
+    border-right: 1px solid white;
+    padding-right: 90px;
+}
+
+@media (max-width: 412px) {
+    .box{
+        flex-direction: column;
+        margin: 0px 30px;
+        margin-bottom: 30px;
+        margin-top: -10px;
+        
+        
+    }
+    .left{
+        border-bottom: 1px solid white;
+        border-right: none;
+        padding: 10px 10px;
+    }
+    .education{
+        height: 120vh;
+        margin-top: 140px;
+        
+    }
+    .education h1{
+        
+        margin-left: -110px;
+    }
+}
+#box1{
+    padding-left: 60px;
+    padding-right: 60px;
+}
+#box2{
+    padding-left: 10px;
+}
