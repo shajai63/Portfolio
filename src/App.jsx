@@ -1,4 +1,3 @@
-
 import './App.css'
 import Contact from './components/Contact'
 import Education from './components/Education'

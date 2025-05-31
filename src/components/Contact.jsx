@@ -1,165 +1,91 @@
-import React, { useState, useEffect } from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
-import "aos/dist/aos.css";
-import AOS from "aos";
-import "../styles/Contact.css";
+import React from "react";
+// import "bootstrap/dist/css/bootstrap.min.css";
 
-const ContactForm = () => {
-    const [formData, setFormData] = useState({
-        firstName: "",
-        lastName: "",
-        email: "",
-        phone: "",
-        message: "",
+export default function Contact() {
+  const [result, setResult] = React.useState("");
+
+  const onSubmit = async (event) => {
+    event.preventDefault();
+    setResult("Sending...");
+    const formData = new FormData(event.target);
+
+    formData.append("access_key", "d1215adc-fec8-4ba8-b795-957a166e794d");
+
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      body: formData,
     });
-    const [popup, setPopup] = useState({ show: false, message: "", type: "" });
 
-    useEffect(() => {
-        AOS.init({ duration: 1000 });
-    }, []);
+    const data = await response.json();
 
-    const handleChange = (e) => {
-        const { name, value } = e.target;
-        setFormData({ ...formData, [name]: value });
-    };
+    if (data.success) {
+      setResult("✅ Form submitted successfully!");
+      event.target.reset();
+    } else {
+      console.log("Error", data);
+      setResult("❌ " + data.message);
+    }
+  };
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
+  return (
+    <div className="container mt-5 mb-5" id="contact">
+      <div className="row justify-content-center">
+        <div className="col-md-6">
+          <div className="card shadow p-4 rounded-4 border border-secondary" style={{ backgroundColor: "rgb(24, 24, 60)" }}>
+            <h1 className="text-center mb-5 display-5 text-white fw-bold">Contact Us</h1>
+            <form onSubmit={onSubmit}>
+              <div className="mb-3">
+                <label htmlFor="name" className="form-label">
+                  Your Name
+                </label>
+                <input
+                  type="text"
+                  name="name"
+                  className="form-control text-white"
+                  required
+                  style={{ backgroundColor: "rgb(24, 24, 60)" }}
+                />
+              </div>
 
-        // Validate form data
-        if (
-            formData.firstName &&
-            formData.lastName &&
-            formData.email &&
-            formData.phone &&
-            formData.message
-        ) {
-            setPopup({
-                show: true,
-                message: "Form submitted successfully!",
-                type: "success",
-            });
+              <div className="mb-3">
+                <label htmlFor="email" className="form-label">
+                  Your Email
+                </label>
+                <input
+                  type="email"
+                  name="email"
+                  className="form-control text-white"
+                  required
+                  style={{ backgroundColor: "rgb(24, 24, 60)" }}
+                />
+              </div>
 
-            // Clear form inputs
-            setFormData({
-                firstName: "",
-                lastName: "",
-                email: "",
-                phone: "",
-                message: "",
-            });
-        } else {
-            setPopup({
-                show: true,
-                message: "Please fill in all fields correctly.",
-                type: "error",
-            });
-        }
+              <div className="mb-3">
+                <label htmlFor="message" className="form-label">
+                  Your Message
+                </label>
+                <textarea
+                  name="message"
+                  className="form-control text-white"
+                  rows="4"
+                  required
+                  style={{ backgroundColor: "rgb(24, 24, 60)" }}
+                ></textarea>
+              </div>
 
-        // Hide popup after 3 seconds
-        setTimeout(() => {
-            setPopup({ ...popup, show: false });
-        }, 3000);
-    };
+              <div className="d-grid">
+                <button type="submit" className="btn btn-primary">
+                  Send Message
+                </button>
+              </div>
+            </form>
 
-    return (
-        <section id="contact" className="py-5">
-            <div className="container" data-aos="fade-up">
-                <h1 className="text-center mb-4 text-white">Contact Us</h1>
-                <div className="row justify-content-center">
-                    <div className="col-md-5">
-                        <form onSubmit={handleSubmit} className="p-4 shadow rounded">
-                            <div className="mb-3">
-                                <label htmlFor="firstName" className="form-label">
-                                    First Name
-                                </label>
-                                <input
-                                    type="text"
-                                    id="firstName"
-                                    name="firstName"
-                                    value={formData.firstName}
-                                    onChange={handleChange}
-                                    className="form-control bg-transparent text-light"
-                                    required
-                                />
-                            </div>
-                            <div className="mb-3">
-                                <label htmlFor="lastName" className="form-label">
-                                    Last Name
-                                </label>
-                                <input
-                                    type="text"
-                                    id="lastName"
-                                    name="lastName"
-                                    value={formData.lastName}
-                                    onChange={handleChange}
-                                    className="form-control bg-transparent text-light"
-                                    required
-                                />
-                            </div>
-                            <div className="mb-3">
-                                <label htmlFor="email" className="form-label">
-                                    Email
-                                </label>
-                                <input
-                                    type="email"
-                                    id="email"
-                                    name="email"
-                                    value={formData.email}
-                                    onChange={handleChange}
-                                    className="form-control bg-transparent text-light"
-                                    required
-                                />
-                            </div>
-                            <div className="mb-3">
-                                <label htmlFor="phone" className="form-label">
-                                    Phone
-                                </label>
-                                <input
-                                    type="tel"
-                                    id="phone"
-                                    name="phone"
-                                    value={formData.phone}
-                                    onChange={handleChange}
-                                    className="form-control bg-transparent text-light"
-                                    required
-                                />
-                            </div>
-                            <div className="mb-3">
-                                <label htmlFor="message" className="form-label">
-                                    Message
-                                </label>
-                                <textarea
-                                    id="message"
-                                    name="message"
-                                    value={formData.message}
-                                    onChange={handleChange}
-                                    rows="5"
-                                    className="form-control bg-transparent text-light"
-                                    required
-                                ></textarea>
-                            </div>
-                            <button type="submit" className="btn btn-primary w-100">
-                                Submit
-                            </button>
-                        </form>
-                        {popup.show && (
-                            <div
-                                className={`mt-3 alert ${
-                                    popup.type === "success"
-                                        ? "alert-success"
-                                        : "alert-danger"
-                                }`}
-                                role="alert"
-                            >
-                                {popup.message}
-                            </div>
-                        )}
-                    </div>
-                </div>
-            </div>
-        </section>
-    );
-};
-
-export default ContactForm;
+            {result && (
+              <div className="mt-3 alert alert-info text-center">{result}</div>
+            )}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
