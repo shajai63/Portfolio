@@ -1,80 +1,95 @@
-import 'aos/dist/aos.css';
-import AOS from 'aos';
-import { useEffect } from 'react';
+import React from "react";
+import { projects } from "../constants";
+import { AiFillGithub } from "react-icons/ai";
+import { BsLink45Deg } from "react-icons/bs";
+import { motion } from "framer-motion";
+
+const Project = (props) => {
+  return (
+    <motion.div
+      className="px-12 py-8 transition-colors duration-300 transform border rounded-xl hover:border-transparent group dark:border-gray-700 dark:hover:border-transparent feature-card"
+      initial={{ y: -30, opacity: 0 }}
+      whileInView={{ y: 0, opacity: 1 }}
+      viewport={{ once: false, amount: 0.5 }}
+      transition={{ duration: 0.75, delay: 0.1 }}
+    >
+      <div className="flex flex-col sm:-mx-4 sm:flex-row">
+        <img
+          className="flex-shrink-0 object-cover w-24 h-24 rounded-full sm:mx-4 ring-4 ring-gray-300"
+          src={props.image}
+          alt=""
+        />
+
+        <div className="mt-4 sm:mx-4 sm:mt-0">
+          <h1 className="text-xl font-semibold font-poppins text-gray-700 capitalize md:text-2xl group-hover:text-white text-gradient">
+            {props.title}
+          </h1>
+          <p className="font-poppins font-normal text-dimWhite mt-3">
+            Tech Stack
+          </p>
+          <div className="mt-2 text-gray-500 capitalize dark:text-gray-300 group-hover:text-gray-300">
+            <div className="flex sm:flex-row">
+              {props.stack.map((tech, index) => (
+                <div
+                  key={tech.id}
+                  index={index}
+                  className="text-dimWhite mr-5 text-[20px] hover:text-teal-200 tooltip"
+                >
+                  {React.createElement(tech.icon)}
+                  <span className="tooltiptext">{tech.name}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <p className="mt-8 text-gray-500 dark:text-gray-300 group-hover:text-gray-300 font-poppins">
+        {props.content}
+      </p>
+
+      <div className="flex mt-4 -mx-2">
+        {props.github ? (
+          <a href={props.github} target="_blank">
+            <AiFillGithub
+              size="2rem"
+              className="text-white mr-1 hover:text-teal-200"
+            />
+          </a>
+        ) : (
+          ""
+        )}
+        {props.link ? (
+          <a href={props.link} target="_blank">
+            <BsLink45Deg
+              size="2rem"
+              className="text-white hover:text-teal-200"
+            ></BsLink45Deg>
+          </a>
+        ) : (
+          ""
+        )}
+      </div>
+    </motion.div>
+  );
+};
 
 const Projects = () => {
-    useEffect(() => {
-        AOS.init({ duration: 1000, offset: 100 });
-    }, []);
+  return (
+    <section id="projects">
+      <h1 className="flex-1 font-poppins font-semibold ss:text-[55px] text-[45px] text-white ss:leading-[80px] leading-[80px]">
+        Projects
+      </h1>
 
-    const projectData = [
-        {
-            title: "Hospital Management",
-            description: "A complete hospital management system featuring admin login, patient CRUD operations, and responsive UI.",
-            technologies: "Spring Boot, React.js, MySQL",
-            link: "https://github.com/shajai63/Hospital-Management-System",
-        },
-        {
-            title: "Portfolio Website",
-            description: "A personal portfolio website showcasing skills, projects, and tools with a clean, responsive design.",
-            technologies: "React.js, Bootstrap",
-            link: "https://github.com/shajai63/Portfolio",
-        },
-        {
-            title: "Student Registration",
-            description: "A CRUD-based student registration application for managing student details efficiently.",
-            technologies: "Spring Boot, React.js, MySQL, Bootstrap",
-            link: "https://github.com/shajai63/Student-Registration",
-        },
-    ];
-
-    return (
-        <section id="projects" className="projects-section">
-            <div className="container">
-                <h1 className="text-center mb-5 display-5 text-white fw-bold" data-aos="fade-up">PROJECTS</h1>
-                <div className="row g-4 justify-content-center">
-                    {projectData.map((project, index) => (
-                        <div className="col-lg-4 col-md-6" data-aos="zoom-in" key={index}>
-                            <div className="card project-card border-secondary">
-                                <div className="card-body">
-                                    <h5 className="card-title text-warning fw-bold">{project.title}</h5>
-                                    <p className="card-text text-light">{project.description}</p>
-                                    <p className="card-text text-info"><strong>Technologies:</strong> {project.technologies}</p>
-                                    <a href={project.link} className="btn btn-outline-warning" target="_blank" rel="noopener noreferrer">
-                                        View Project
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    ))}
-                </div>
-            </div>
-
-            <style jsx>{`
-                .projects-section {
-                    padding: 50px 0;
-                }
-                .project-card {
-                    background: rgba(0, 0, 0, 0.8);
-                    transition: transform 0.3s, box-shadow 0.3s;
-                }
-                .project-card:hover {
-                    transform: scale(1.05);
-                    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-                }
-                .card-title {
-                    font-size: 1.7rem;
-                }
-                .btn-outline-warning {
-                    transition: background-color 0.3s, color 0.3s;
-                }
-                .btn-outline-warning:hover {
-                    background-color: #ffc107;
-                    color: #000;
-                }
-            `}</style>
-        </section>
-    );
+      <div className="container px-2 py-10 mx-auto mb-8">
+        <div className="grid grid-cols-1 gap-8 mt-8 md:mt-16 md:grid-cols-2">
+          {projects.map((project, index) => (
+            <Project key={project.id} index={index} {...project} />
+          ))}
+        </div>
+      </div>
+    </section>
+  );
 };
 
 export default Projects;
