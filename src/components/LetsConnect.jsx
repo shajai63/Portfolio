@@ -2,6 +2,7 @@ import styles from "../style";
 import { arrowUp } from "../assets";
 import { callToAction } from "../constants";
 
+
 const LetsConnect = () => {
   return (
     <div

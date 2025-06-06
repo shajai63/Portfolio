@@ -16,10 +16,12 @@ const Footer = () => (
           {aboutMe.name}
         </h2>
         <p
-          className={`font-poppins font-normal text-dimWhite text-[16px] leading-[30.8px] max-w-[470px] mt-5`}
+          className="font-poppins font-normal text-dimWhite text-[16px] leading-[30.8px] max-w-[470px] mt-5"
         >
-        {aboutMe.tagLine}
+          <span className="block sm:inline">Java FullStack Developer | </span>
+          <span className="block sm:inline">EnterKey Solutions</span>
         </p>
+
         <div className="flex flex-row mt-4">
           {socialMedia.map((social, index) => (
             <a
@@ -42,7 +44,7 @@ const Footer = () => (
           <a href={repoLink} target="_blank">
             <Button
               styles="mt-10 inline-flex items-center justify-center"
-              text="Star"
+              text="GitHub"
               icon={AiFillGithub}
             />
           </a>

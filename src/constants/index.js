@@ -170,27 +170,27 @@ export const skills = [
         name: "Postman",
       },
       {
-        id: "t-4",
+        id: "t-5",
         icon: BiLogoVisualStudio,
         name: "VS Code",
       },
       {
-        id: "t-5",
+        id: "t-6",
         icon: SiGit,
         name: "Git",
       },
       {
-        id: "t-6",
+        id: "t-7",
         icon: AiFillGithub,
         name: "GitHub",
       },
       {
-        id: "t-7",
+        id: "t-8",
         icon: SiNetlify,
         name: "Netlify",
       },
       {
-        id: "t-8",
+        id: "t-9",
         icon: SiVite,
         name: "ViteJS",
       },
@@ -315,7 +315,7 @@ export const projects = [
     link: "e",
     image: worknexus,
     content:
-      "Simple and secure way to interact with remote MCP Servers in Trusted Execution Environments (TEEs). Built at ETHGlobal Trifecta Hackathon.",
+      "Developed WorkNexus, a collaborative web application designed to streamline task management and team coordination.",
     stack: [
       {
         id: "icon-1",
