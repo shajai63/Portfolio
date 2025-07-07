@@ -1,6 +1,6 @@
 import {
   portfolio,
-  enterkey,
+  tt,
   nsic,
   jspiders,
   homiefix,
@@ -40,7 +40,7 @@ export const resumeLink =
   "https://drive.google.com/file/d/1DjJ8Qg71MBQRO_tvdNdNMImM7U8D35ho/view?usp=drive_link";
 export const repoLink = "https://github.com/shajai63?tab=repositories";
 
-export const callToAction = "https://www.linkedin.com/in/shajaisj63/";
+export const callToAction = "https://www.linkedin.com/in/shajai56/";
 
 export const navLinks = [
   {
@@ -201,9 +201,9 @@ export const skills = [
 // Add your current/past professional work experience here
 export const experiences = [
   {
-    organisation: "EnterKey Solutions, Nagercoil",
-    logo: enterkey,
-    link: "https://enterkeysolutions.com",
+    organisation: "Talentturbo Technologies Pvt Ltd, Nagercoil",
+    logo: tt,
+    link: "https://www.talentturbo.us/",
     positions: [
       {
         title: "Java FullStack Developer",
@@ -417,7 +417,7 @@ export const socialMedia = [
   {
     id: "social-media-1",
     icon: AiFillLinkedin,
-    link: "https://www.linkedin.com/in/shajaisj63/",
+    link: "https://www.linkedin.com/in/shajai56/",
   },
   {
     id: "social-media-2",
@@ -427,7 +427,7 @@ export const socialMedia = [
   {
     id: "social-media-3",
     icon: AiFillMail,
-    link: "mailto:sjshajai56@gmail.com",
+    link: "mailto:shajai.contact@gmail.com",
   },
   {
     id: "social-media-4",
