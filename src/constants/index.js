@@ -5,7 +5,7 @@ import {
   jspiders,
   homiefix,
   worknexus,
-  chatbot,
+  flipzy,
   ponjesly,
   bapuji,
 } from "../assets";
@@ -33,7 +33,7 @@ import {
   SiEclipseide,
 } from "react-icons/si";
 
-import { DiCss3, DiJava} from "react-icons/di";
+import { DiCss3, DiJava } from "react-icons/di";
 import { BiLogoVisualStudio } from "react-icons/bi";
 
 export const resumeLink =
@@ -310,6 +310,42 @@ export const projects = [
   },
   {
     id: "project-2",
+    title: "Flipzy",
+    github: "https://github.com/shajai63?tab=repositories",
+    link: "https://drive.google.com/file/d/1LEwietK2vBv2FtYMClyyijzF4AR1k7ds/view?usp=sharing",
+    image: flipzy,
+    content:
+      "Developed a full-stack e-commerce platform using microservice architecture with React frontend and Spring Boot backend. Payment implementation via Razorpay.",
+    stack: [
+      {
+        id: "icon-1",
+        icon: DiJava,
+        name: "Java",
+      },
+      {
+        id: "icon-2",
+        icon: SiSpringboot,
+        name: "Springboot",
+      },
+      {
+        id: "icon-3",
+        icon: SiReact,
+        name: "React.js",
+      },
+      {
+        id: "icon-4",
+        icon: SiMysql,
+        name: "Mysql",
+      },
+      {
+        id: "icon-5",
+        icon: SiBootstrap,
+        name: "Bootstrap",
+      },
+    ],
+  },
+  {
+    id: "project-3",
     title: "Worknexus",
     github: "https://github.com/shajai63?tab=repositories",
     link: "e",
@@ -344,42 +380,7 @@ export const projects = [
       },
     ],
   },
-  {
-    id: "project-3",
-    title: "Chatbot",
-    github: "https://github.com/shajai63?tab=repositories",
-    link: "e",
-    image: chatbot,
-    content:
-      "Developed a Chatbot web application using Spring Boot, React, MySQL, and Bootstrap for seamless user interaction and dynamic responses.",
-    stack: [
-      {
-        id: "icon-1",
-        icon: DiJava,
-        name: "Java",
-      },
-      {
-        id: "icon-2",
-        icon: SiSpringboot,
-        name: "Springboot",
-      },
-      {
-        id: "icon-3",
-        icon: SiReact,
-        name: "React.js",
-      },
-      {
-        id: "icon-4",
-        icon: SiMysql,
-        name: "Mysql",
-      },
-      {
-        id: "icon-5",
-        icon: SiBootstrap,
-        name: "Bootstrap",
-      },
-    ],
-  },
+
   {
     id: "project-4",
     title: "Portfolio",

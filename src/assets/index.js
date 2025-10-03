@@ -23,7 +23,7 @@ import nsic from "./nsic.jpg";
 import jspiders from "./jspiders.jpeg";
 import homiefix from "./homiefix.png";
 import worknexus from "./worknexus.jpg";
-import chatbot from "./chatbot.jpg";
+import flipzy from "./Flipzy.jpg"
 import ponjesly from "./ponjesly.png";
 import bapuji from "./school.png";
 import comicify_ai from "./comicify-ai.png";
@@ -87,7 +87,7 @@ export {
   jspiders,
   homiefix,
   worknexus,
-  chatbot,
+  flipzy,
   ponjesly,
   bapuji,
 };
