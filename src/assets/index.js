@@ -19,7 +19,7 @@ import huntly from "./huntly.png";
 import oracle from "./oracle.jpg";
 import enterkey from "./enterkey.jpg";
 import tt from "./tt.jpeg";
-import nsic from "./nsic.jpg";
+import stedaxis from "./stedaxis_logo.jpeg";
 import jspiders from "./jspiders.jpeg";
 import homiefix from "./homiefix.png";
 import worknexus from "./worknexus.jpg";
@@ -83,7 +83,7 @@ export {
   placeholder,
   enterkey,
   tt,
-  nsic,
+  stedaxis,
   jspiders,
   homiefix,
   worknexus,

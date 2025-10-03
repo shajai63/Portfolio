@@ -1,7 +1,7 @@
 import {
   portfolio,
   tt,
-  nsic,
+  stedaxis,
   jspiders,
   homiefix,
   worknexus,
@@ -200,14 +200,33 @@ export const skills = [
 
 // Add your current/past professional work experience here
 export const experiences = [
+
+  {
+    organisation: "STEDAXIS, Nagercoil",
+    logo: stedaxis,
+    link: "https://averlon.ai/",
+    positions: [
+      {
+        title: "FullStack Developer",
+        duration: "Oct 2025 - Present",
+        content: [
+          {
+            text: "Working as a Java Fullstack Developer, building and maintaining scalable web applications using Spring Boot, React.js and MySQL.",
+            link: "",
+          },
+        ],
+      },
+    ],
+  },
+
   {
     organisation: "Talentturbo Technologies Pvt Ltd, Nagercoil",
     logo: tt,
     link: "https://www.talentturbo.us/",
     positions: [
       {
-        title: "Java FullStack Developer",
-        duration: "Oct 2024 - Present",
+        title: "FullStack Developer",
+        duration: "Sep 2024 - Sep 2025",
         content: [
           {
             text: "Working as a Java Fullstack Developer, building and maintaining scalable web applications using Spring Boot, React.js and MySQL.",
@@ -243,31 +262,7 @@ export const experiences = [
       },
     ],
   },
-  {
-    organisation: "NSIC Technical Services Centre, Chennai",
-    logo: nsic,
-    link: "https://averlon.ai/",
-    positions: [
-      {
-        title: "Web Developer Intern",
-        duration: "May 2022 - Jun 2022",
-        content: [
-          {
-            text: "Worked as a Web Developer Intern, focusing on building responsive websites using HTML, CSS, JavaScript, and Bootstrap.",
-            link: "",
-          },
-          {
-            text: "Gained hands-on experience in creating user-friendly interfaces and improving website performance",
-            link: "",
-          },
-          {
-            text: "Collaborated with the team to develop and maintain front-end components for real-time projects.",
-            link: "",
-          },
-        ],
-      },
-    ],
-  },
+  
 ];
 
 // Add information about all the projects to be listed out in your portfolio
