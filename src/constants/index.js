@@ -39,7 +39,7 @@ import { DiCss3, DiJava } from "react-icons/di";
 import { BiLogoVisualStudio } from "react-icons/bi";
 
 export const resumeLink =
-  "https://drive.google.com/file/d/1DjJ8Qg71MBQRO_tvdNdNMImM7U8D35ho/view?usp=drive_link";
+  "https://drive.google.com/file/d/1thwAK7XQLIj0OjG2ZOk79ymjyyS_Tim9/view?usp=sharing";
 export const repoLink = "https://github.com/shajai63?tab=repositories";
 
 export const callToAction = "https://www.linkedin.com/in/shajai56/";
