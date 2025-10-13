@@ -19,8 +19,8 @@ const Footer = () => (
         <p
           className="font-poppins font-normal text-dimWhite text-[16px] leading-[30.8px] max-w-[470px] mt-5"
         >
-          <span className="block sm:inline">Java FullStack Developer | </span>
-          <span className="block sm:inline">EnterKey Solutions</span>
+          <span className="block sm:inline">FullStack Developer | </span>
+          <span className="block sm:inline">Stedaxis</span>
         </p>
 
         <div className="flex flex-row mt-4">

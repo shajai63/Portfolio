@@ -24,6 +24,7 @@ import {
   SiSpringboot,
   SiReact,
   SiPython,
+  SiExpress,
   SiPostman,
   SiGit,
   SiMysql,
@@ -33,6 +34,7 @@ import {
   SiEclipseide,
 } from "react-icons/si";
 
+import { FaNodeJs } from "react-icons/fa";
 import { DiCss3, DiJava } from "react-icons/di";
 import { BiLogoVisualStudio } from "react-icons/bi";
 
@@ -96,8 +98,8 @@ export const skills = [
       },
       {
         id: "pl-2",
-        icon: SiPython,
-        name: "Python",
+        icon: FaNodeJs,
+        name: "Node.js",
       },
       {
         id: "pl-3",
@@ -106,16 +108,22 @@ export const skills = [
       },
       {
         id: "pl-4",
+        icon: SiPython,
+        name: "Python",
+      },
+      {
+        id: "pl-5",
         icon: DiCss3,
         name: "CSS",
       },
       {
-        id: "pl-5",
+        id: "pl-6",
         icon: AiFillHtml5,
         name: "HTML",
       },
     ],
-  },
+  }
+  ,
   {
     title: "Databases",
     items: [
@@ -135,15 +143,20 @@ export const skills = [
         name: "Spring Boot",
       },
       {
-        id: "f-3",
+        id: "f-1",
+        icon: SiExpress,
+        name: "ExpressJS",
+      },
+      {
+        id: "f-2",
         icon: SiReact,
         name: "ReactJS",
       },
       {
-        id: "f-4",
+        id: "f-3",
         icon: SiBootstrap,
         name: "Bootstrap",
-      },
+      }
     ],
   },
   {
@@ -202,7 +215,7 @@ export const skills = [
 export const experiences = [
 
   {
-    organisation: "STEDAXIS, Nagercoil",
+    organisation: "Stedaxis, Nagercoil",
     logo: stedaxis,
     link: "https://averlon.ai/",
     positions: [
